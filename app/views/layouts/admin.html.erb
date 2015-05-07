@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SampleApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+    
+    
+    <ul class="nav nav-pills pull-right">
+      <% if current_user %>
+            <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li><%= link_to 'Login', new_user_session_path %></li>
+            <% end %>
+    </ul>
+    
+    
+  
+    
+</head>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <%= link_to "Users", admin_users_index_path%>
+    </div>
+    <div class="span10">
+     <%= yield %>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
