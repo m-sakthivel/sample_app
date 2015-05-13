@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  resources :orders
+  resources :states
+
+  resources :countries
+
+  resources :orders do 
+    collection { post :import }
+    collection do
+      get 'search'
+      
+    end
+  end
 
   namespace :admin do
   get 'users/index'
@@ -28,6 +38,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :employees
+    
+  get  "/employees/find_state/:id" => "employees#find_state"
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

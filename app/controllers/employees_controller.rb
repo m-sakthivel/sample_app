@@ -4,7 +4,8 @@ class EmployeesController < ApplicationController
   # GET /employees
   # GET /employees.json
   def index
-    @employees = Employee.all
+    @employees = Employee.all.paginate(:page => params[:page], :per_page => 1)
+    
   end
 
   # GET /employees/1
@@ -14,6 +15,7 @@ class EmployeesController < ApplicationController
 
   # GET /employees/new
   def new
+    @countries = Country.all
     @employee = Employee.new
   end
 
@@ -59,6 +61,15 @@ class EmployeesController < ApplicationController
       format.html { redirect_to employees_url, notice: 'Employee was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def find_state
+    @states =  State.find_by(country_id: params[:id])
+    p @states
+    p '----------------------'
+    respond_to do |format|
+     format.json { render json: @states }
+   end
   end
 
   private

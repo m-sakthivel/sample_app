@@ -1,7 +1,14 @@
 class Admin::UsersController < ApplicationController
   layout "admin"
+  #prawnto :prawn => { :top_margin => 75 }
+
   def index
       @users = User.all
+      respond_to do |format|
+      format.html
+      format.csv { send_data @users.to_csv }
+      format.xls
+    end
   end
 
   def edit

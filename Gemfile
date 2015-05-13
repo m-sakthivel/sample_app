@@ -13,10 +13,17 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'paperclip'
+#gem 'prawn'
+gem 'will_paginate'
+gem "font-awesome-rails"
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 gem "therubyracer"
 gem "less-rails"
+gem 'prawn-rails'
+gem 'roo'
+gem 'iconv'
+gem 'roo-xls'
 # gem 'rails4_client_side_validations', '~> 4.2.0'
 gem "twitter-bootstrap-rails"
 gem 'bootstrap_validator_rails'
@@ -30,7 +37,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+#gem 'spring', '1.3.5',        group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

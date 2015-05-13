@@ -16,3 +16,4 @@
 //= require turbolinks
 //= require bootstrapValidator
 //= require_tree .
+

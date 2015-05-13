@@ -14,6 +14,6 @@
   <strong>Order date:</strong>
   <%= @order.order_date %>
 </p>
-
+<%= link_to "Printable Invoice (PDF)", order_path(@order, :format => 'pdf') %>
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
