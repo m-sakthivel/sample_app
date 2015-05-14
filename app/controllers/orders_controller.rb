@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order
+    #@order
     respond_to do |format|
       format.html
       format.pdf

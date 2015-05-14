@@ -18,18 +18,21 @@ gem 'will_paginate'
 gem "font-awesome-rails"
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
-gem "therubyracer"
-gem "less-rails"
+
 gem 'prawn-rails'
 gem 'roo'
 gem 'iconv'
 gem 'roo-xls'
 # gem 'rails4_client_side_validations', '~> 4.2.0'
+
 gem "twitter-bootstrap-rails"
-gem 'bootstrap_validator_rails'
+gem "therubyracer"
+gem "less-rails"
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'jquery-rails'
+gem 'bootstrap_validator_rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'

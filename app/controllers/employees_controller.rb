@@ -65,11 +65,34 @@ class EmployeesController < ApplicationController
   
   def find_state
     @states =  State.find_by(country_id: params[:id])
-    p @states
-    p '----------------------'
     respond_to do |format|
      format.json { render json: @states }
    end
+  end
+  
+  def user_list
+    @exist =  Follow.select('following_id').where(:user_id => current_user.id, :status => true)
+    @users = User.select('id,user_name').all
+   
+  end
+  
+  def subscribe_user
+    @exist =  Follow.select('id, status').where(:following_id => params[:id], :user_id => current_user.id).first
+    if @exist 
+       if @exist.status == true
+         Follow.where(id: @exist.id).update_all(status: false)
+       else
+         Follow.where(id: @exist.id).update_all(status: true)
+       end
+       redirect_to orders_path
+     else
+     @follow = Follow.new
+     @follow.following_id = params[:id]
+     @follow.user_id = current_user.id
+     @follow.status = true
+     @follow.save
+     redirect_to orders_path
+    end
   end
 
   private
@@ -82,4 +105,6 @@ class EmployeesController < ApplicationController
     def employee_params
       params.require(:employee).permit(:employee_name, :employee_id, :employee_address)
     end
+    
+    
 end

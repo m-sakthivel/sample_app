@@ -5,15 +5,24 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'jquery-1.11.3', 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <div class = "pull-right" >
-   <% if current_user %>
+  <ul class="nav">
+ 
+     <% if current_user %>
+            <%= link_to 'Blog', new_blog_path %>|
+            <%= link_to 'User List', user_list_employees_path %>|
             <%= link_to 'Edit Profile',edit_user_registration_path %>|
             <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
             <%= image_tag(current_user.avatar.url(:thumb), :class=>'img-circle', height: '32', width: '32') %>
             <% else %>
             <li><%= link_to 'Login', new_user_session_path %></li>
             <% end %>
-  </div>
+   
+      
+   </ul>
+  </li>
+</ul>
+  
+  
     
 </head>
 <body>

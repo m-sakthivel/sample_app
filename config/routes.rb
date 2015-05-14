@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :blogs
+
   resources :states
 
   resources :countries
@@ -37,10 +39,18 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  resources :employees
+  resources :employees do
+    member do 
+      get 'subscribe_user'
+    end
+    collection do
+      get 'user_list'
+    end
+  end
     
   get  "/employees/find_state/:id" => "employees#find_state"
-  
+  #get  "/employees/subscribe_user/:id" => 
+  #get  "/employees/user_list" => "employees#user_list"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

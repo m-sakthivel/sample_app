@@ -1,0 +1,28 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>User name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+    
+      <tr>
+        <% if @exist.map{|a| a.following_id}.include? user.id %>
+        <td><%= link_to user.user_name, subscribe_user_employee_path(user)%><i class="fa fa-check"></i></td>
+        <% else %>
+        <td><%= link_to user.user_name, subscribe_user_employee_path(user)%></td>
+        <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</br>
+
+
+
+
+
+
