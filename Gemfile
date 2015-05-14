@@ -25,9 +25,11 @@ gem 'iconv'
 gem 'roo-xls'
 # gem 'rails4_client_side_validations', '~> 4.2.0'
 
+
 gem "twitter-bootstrap-rails"
 gem "therubyracer"
 gem "less-rails"
+
 # Use jquery as the JavaScript library
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

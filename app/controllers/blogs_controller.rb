@@ -5,6 +5,11 @@ class BlogsController < ApplicationController
 
   def index
     
+    @fls = Follow.select('following_id').where(:user_id => current_user.id, :status => true)
+    @blgs = Array.new
+    @fls.each do |blg|
+      @blgs = Blog.where(:user_id => blg.following_id)
+    end
     @blogs = Blog.all
     respond_with(@blogs)
   end
