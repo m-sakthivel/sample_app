@@ -12,6 +12,13 @@ Rails.application.routes.draw do
       
     end
   end
+  
+  namespace :api do
+  #namespace :api, path: '', constraints: {subdomain: 'api'}, defaults: {format: 'json'} do
+  namespace :v1 do
+    resources :orders
+  end
+end
 
   namespace :admin do
   get 'users/index'
@@ -49,6 +56,8 @@ Rails.application.routes.draw do
   end
     
   get  "/employees/find_state/:id" => "employees#find_state"
+  
+  #mount API::Root => '/'
   #get  "/employees/subscribe_user/:id" => 
   #get  "/employees/user_list" => "employees#user_list"
 

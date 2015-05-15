@@ -24,8 +24,8 @@ gem 'roo'
 gem 'iconv'
 gem 'roo-xls'
 # gem 'rails4_client_side_validations', '~> 4.2.0'
-
-
+#gem 'mailcatcher'
+gem 'grape'
 gem "twitter-bootstrap-rails"
 gem "therubyracer"
 gem "less-rails"

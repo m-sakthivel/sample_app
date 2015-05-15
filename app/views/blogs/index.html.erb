@@ -4,7 +4,7 @@
     <% @blogs.each do |blog| %>
     <%if blog.user_id == current_user.id%>
        <p>
-           <%=link_to blog.title, blog_path(blog)%></br>
+           <%=link_to blog.title, blog_path(blog), :class => "test-color"%></br>
       </p>
       <%end%>
     <% end %>
@@ -13,7 +13,7 @@
   
   <%  @blgs.each do |blog|%> 
    <p>
-           <%=link_to blog.title, blog_path(blog)%></br>
+           <%=link_to blog.title, blog_path(blog), :class => "test-color"%></br>
     </p>
   <%end%>
 <%#= link_to 'New Blog', new_blog_path %>

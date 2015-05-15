@@ -21,5 +21,21 @@ class User < ActiveRecord::Base
     end
   end
   
+  after_create :send_welcome_mail
+  def send_welcome_mail
+          UserMailer.welcome_mail().deliver
+  end
+  
+  before_create do |doc|
+  doc.api_key = doc.generate_api_key
+  end
+  
+  def generate_api_key
+  loop do
+    token = SecureRandom.base64.tr('+/=', 'Qrt')
+    break token unless User.exists?(api_key: token)
+  end
+  end
+
   
 end

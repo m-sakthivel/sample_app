@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150514050859) do
+ActiveRecord::Schema.define(version: 20150515082532) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20150514050859) do
     t.datetime "avatar_updated_at"
     t.boolean  "is_admin"
     t.boolean  "status"
+    t.string   "api_key"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
