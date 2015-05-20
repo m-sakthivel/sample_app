@@ -16,9 +16,10 @@ gem 'paperclip'
 #gem 'prawn'
 gem 'will_paginate'
 gem "font-awesome-rails"
+gem 'twilio-ruby'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
-
+gem 'jquery-rails'
 gem 'prawn-rails'
 gem 'roo'
 gem 'iconv'
@@ -27,13 +28,15 @@ gem 'roo-xls'
 #gem 'mailcatcher'
 gem 'grape'
 gem "twitter-bootstrap-rails"
+#gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 gem "therubyracer"
 gem "less-rails"
 
 # Use jquery as the JavaScript library
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'jquery-rails'
+
 gem 'bootstrap_validator_rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

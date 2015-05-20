@@ -3,8 +3,17 @@
   $(document).ready(function() {
     $('#new_employee').bootstrapValidator(); 
     $('#employee_country').change(function(){
+         
          var id =  this.value;
          jQuery.get('/employees/find_state/' + id, function(data){
+           if(data[0]!= null && data[0]!=""){
+              $('#employee_state').find('option').remove().end()
+              $('#employee_state').append($("<option></option>").attr("value","").text("Select State"));
+              for (i=0; i <data[0].length; i++ ){
+                 $('#employee_state').append($("<option></option>").attr("value",data[0][i].id).text(data[0][i].state_name));
+              }
+              
+           }
        });
         
     });
@@ -43,7 +52,7 @@
     
     <div class="control-group">
     <%#= f.label :country %>
-    <%= f.collection_select(:state, @countries, :id, :country_name, {:prompt => true})%>
+    <%= f.collection_select(:state, @countries, :id, :country_name, {:prompt => "select state"})%>
   </div>
   <div class="actions">
     <%= f.submit %>

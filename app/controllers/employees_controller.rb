@@ -26,7 +26,19 @@ class EmployeesController < ApplicationController
   # POST /employees
   # POST /employees.json
   def create
+     twilio_sid = "AC87d4a655d1b7f6251393db346fd69d46"
+    twilio_token = "3a1d3e17645ced5700606682a613485d"
+    twilio_phone_number = "2678677556"
+ 
+    @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
+ 
+    @twilio_client.account.sms.messages.create(
+      :from => "+1#{twilio_phone_number}",
+      :to => '+919042755963',
+      :body => "This is an message. It gets sent to"
+    )
     @employee = Employee.new(employee_params)
+   
 
     respond_to do |format|
       if @employee.save
@@ -64,10 +76,8 @@ class EmployeesController < ApplicationController
   end
   
   def find_state
-    @states =  State.find_by(country_id: params[:id])
-    respond_to do |format|
-     format.json { render json: @states }
-   end
+    states =  State.where(country_id: params[:id])
+    render :json => [states] if states
   end
   
   def user_list

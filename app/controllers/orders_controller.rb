@@ -3,11 +3,9 @@ class OrdersController < ApplicationController
   respond_to :html
 
   def index
-    if(params[:format])
-      @orders = Order.search params[:search]
-    else
-      @orders = Order.all
-    end
+    
+      @orders = Order.search(params[:search])
+    
     #respond_with(@orders)
   end
 

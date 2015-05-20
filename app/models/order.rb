@@ -2,8 +2,11 @@ class Order < ActiveRecord::Base
     belongs_to :user
     
     def self.search(search)
-       search_condition = "%" + search + "%"
-       Order.where('order_name LIKE ?', search_condition)
+        if search
+            Order.where('order_name LIKE ?', "%#{search}%")
+        else
+            Order.all
+        end
        #find(:all, :conditions => ['order_name LIKE ?', search_condition])
     end
     
