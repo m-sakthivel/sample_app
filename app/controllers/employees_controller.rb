@@ -4,7 +4,7 @@ class EmployeesController < ApplicationController
   # GET /employees
   # GET /employees.json
   def index
-    @employees = Employee.all.paginate(:page => params[:page], :per_page => 1)
+    @employees = Employee.all.paginate(:page => params[:page], :per_page => 10)
     
   end
 
@@ -82,8 +82,9 @@ class EmployeesController < ApplicationController
   
   def user_list
     @exist =  Follow.select('following_id').where(:user_id => current_user.id, :status => true)
+    #@users = User.where.not("id = ?",current_user.id).order("created_at DESC")
     @users = User.select('id,user_name').all
-   
+    # @conversations = Conversation.involving(current_user).order("created_at DESC")
   end
   
   def subscribe_user

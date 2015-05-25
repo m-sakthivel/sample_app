@@ -44,6 +44,10 @@ end
   namespace :admin do
   get 'users/delete'
   end
+  
+  authenticated :user do
+    root 'users#index'
+  end
 
   devise_for :users
   resources :employees do
@@ -56,6 +60,10 @@ end
   end
     
   get  "/employees/find_state/:id" => "employees#find_state"
+  
+  resources :conversations do
+    resources :messages
+  end
   
   #mount API::Root => '/'
   #get  "/employees/subscribe_user/:id" => 

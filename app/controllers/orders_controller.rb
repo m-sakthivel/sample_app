@@ -4,7 +4,9 @@ class OrdersController < ApplicationController
 
   def index
     
-      @orders = Order.search(params[:search])
+      @orders = Order.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
+      p @orders
+      p "-------------------"
     
     #respond_with(@orders)
   end

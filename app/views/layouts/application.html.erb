@@ -3,15 +3,16 @@
 <head>
   <title>SampleApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
   <%= javascript_include_tag  'jquery-1.11.3', 'jquery_ujs','application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <ul class="nav">
- 
-     <% if current_user %>
-            <%= link_to 'Blog', new_blog_path %>|
-            <%= link_to 'User List', user_list_employees_path %>|
-            <%= link_to 'Edit Profile',edit_user_registration_path %>|
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+  
+ <ul class="nav nav-tabs">
+   <% if current_user %>
+            <li role="presentation"><%= link_to 'Blog', new_blog_path %></li>
+            <li role="presentation"><%= link_to 'User List', user_list_employees_path %></li>
+            <li role="presentation"><%= link_to 'Edit Profile',edit_user_registration_path %></li>
+            <li role="presentation"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
             <%= image_tag(current_user.avatar.url(:thumb), :class=>'img-circle', height: '32', width: '32') %>
             <% else %>
             <li><%= link_to 'Login', new_user_session_path %></li>
@@ -19,22 +20,20 @@
    
       
    </ul>
-  </li>
-</ul>
-  
-  
-    
 </head>
 <body>
 
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+     
+    </div>
+    <div class="span10">
+     <%= yield %>
+    </div>
+  </div>
+</div>
 
-<div class ="container">
- <div class="row">
-   <div class="span9">
-<%= yield %>
-</div>
-<!--<div class="span3"> hiiiiiii </div>-->
-</div>
-</div>
+
 </body>
 </html>

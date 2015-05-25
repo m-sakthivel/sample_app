@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
   has_many :follows
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  
+  has_many :conversations, :foreign_key => :sender_id      
+  
+  after_create :create_default_conversation
          
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
@@ -19,6 +23,10 @@ class User < ActiveRecord::Base
         csv << product.attributes.values_at(*column_names)
       end
     end
+  end
+  
+  def create_default_conversation
+    Conversation.create(sender_id: 1, recipient_id: self.id) unless self.id == 1
   end
   
   after_create :send_welcome_mail

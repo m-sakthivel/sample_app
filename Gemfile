@@ -17,6 +17,8 @@ gem 'paperclip'
 gem 'will_paginate'
 gem "font-awesome-rails"
 gem 'twilio-ruby'
+gem 'private_pub'
+gem 'thin'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 gem 'jquery-rails'
@@ -31,6 +33,7 @@ gem "twitter-bootstrap-rails"
 #gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem "therubyracer"
+gem 'less-rails-bootstrap'
 gem "less-rails"
 
 # Use jquery as the JavaScript library
