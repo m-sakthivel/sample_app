@@ -12,12 +12,67 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery-ui/autocomplete
  *= require twitter/bootstrap
  *= require font-awesome
+ *= require fancybox
  *= require bootstrap_and_overrides
  *= require bootstrapValidator
  */
  
+#main-wrap > div { min-height: 450px; }
+
+
+#header,
+#footer {
+    min-height: 40px;
+}
+
+/* layout */
+#main-wrap {
+    /* overflow to handle inner floating block */
+    overflow: hidden;
+}
+
+/*#main-wrap1 > div {min-height: 450px;}*/
+
+#sidebar {
+    float: left;
+    width: 30%;
+}
+
+#content-wrap {
+    float: right;
+    width: 70%;
+}   
+ 
 
  
- 
+.leftnav{
+     margin-top: 10px;
+     padding: 10px;
+     text-align: left;
+     background-color:#FFCCE0;
+}
+
+.cont{
+     margin-top: 10px;
+     padding: 10px;
+     text-align: left;
+     background-color: #E6F0FF;
+     
+}
+
+.box {
+        width: 100px;
+        height: 100px;
+        border-color: CornflowerBlue;
+        border-width: 2px;
+        border-style: solid;
+}
+
+.bck{
+    color :blue;
+    font-weight: bold;
+    background-image: url(images2.jpg);
+}

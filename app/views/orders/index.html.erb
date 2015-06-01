@@ -17,7 +17,11 @@
   <%= submit_tag "Import" %>
 <% end %>
 
+<%#= link_to 'New Order', '#new_order_modal', 'data-toggle' => 'modal' %>
 <%= link_to 'New Order', new_order_path %>
+
+
+
 
 <script>
 $(function() {
@@ -25,5 +29,10 @@ $("#search").keyup(function() {
     $.get($("#products_search").attr("action"), $("#products_search").serialize(), null, "script");
     return false;
   });
+  
+$("#search").autocomplete({
+    source: '/orders/autocomplete.json',
+  });
 });
+
 </script>

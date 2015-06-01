@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150521060054) do
+ActiveRecord::Schema.define(version: 20150529103227) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 20150521060054) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+  end
+
+  create_table "companies", force: true do |t|
+    t.string   "name"
+    t.decimal  "lat"
+    t.decimal  "lng"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "conversations", force: true do |t|
@@ -69,6 +77,9 @@ ActiveRecord::Schema.define(version: 20150521060054) do
     t.date     "order_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
+    t.float    "lat"
+    t.float    "long"
   end
 
   create_table "states", force: true do |t|

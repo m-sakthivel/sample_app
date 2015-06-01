@@ -2,7 +2,6 @@
 $(document).ready(function() {
     $('#new_employee').bootstrapValidator(); 
     $('#employee_country').change(function(){
-         
          var id =  this.value;
          jQuery.get('/employees/find_state/' + id, function(data){
            if(data[0]!= null && data[0]!=""){

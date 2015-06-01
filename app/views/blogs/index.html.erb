@@ -1,10 +1,18 @@
+<script>
+$('document').ready(function(){
+    
+   $("a.fancy").fancybox();
+        
+});
+</script>
+
 <h5><u></u>My Blog</u></h5>
 
 
     <% @blogs.each do |blog| %>
     <%if blog.user_id == current_user.id%>
        <p>
-           <%=link_to blog.title, blog_path(blog), :class => "test-color"%></br>
+           <%=link_to blog.title, blog_path(blog), :class => "test-color fancy", :"data-fancybox-type" => "iframe"%></br>
       </p>
       <%end%>
     <% end %>
@@ -16,5 +24,9 @@
            <%=link_to blog.title, blog_path(blog), :class => "test-color"%></br>
     </p>
   <%end%>
+  
+  
+
+
 <%#= link_to 'New Blog', new_blog_path %>
 

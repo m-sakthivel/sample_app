@@ -12,14 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/autocomplete
 //= require chat
 //= require private_pub
+//= require fancybox
+//= require tinymce
 //= require bootstrap.min
 //= require turbolinks
 //= require bootstrapValidator
 //= require_tree .
 
- 
- 
+
+
  
   

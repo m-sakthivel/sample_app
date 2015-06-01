@@ -1,0 +1,17 @@
+<%= form_for "@company" do |f|%>
+ create company
+ <div>
+ <%= f.label "name"%>
+ <%= f.text_field "name"%>
+ </div>
+ <div>
+ <%= f.label "lat"%>
+ <%= f.text_field "lat"%>
+ </div>
+ <div>
+ <%= f.label "lang"%>
+ <%= f.text_field "lang"%>
+ </div>
+ <%= f.submit%>
+
+<%end%>

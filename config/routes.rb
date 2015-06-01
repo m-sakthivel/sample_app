@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'companies/index'
+
+  get 'companies/show'
+
+  get 'companies/new'
+
+  get 'companies/edit'
+
   resources :blogs
 
   resources :states
@@ -9,6 +17,7 @@ Rails.application.routes.draw do
     collection { post :import }
     collection do
       get 'search'
+      get 'autocomplete'
       
     end
   end

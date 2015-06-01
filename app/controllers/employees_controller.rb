@@ -95,13 +95,15 @@ class EmployeesController < ApplicationController
        else
          Follow.where(id: @exist.id).update_all(status: true)
        end
-       redirect_to orders_path
+      redirect_to orders_path
+     #  render :layout=> false
      else
      @follow = Follow.new
      @follow.following_id = params[:id]
      @follow.user_id = current_user.id
      @follow.status = true
      @follow.save
+     #render :layout=> false
      redirect_to orders_path
     end
   end

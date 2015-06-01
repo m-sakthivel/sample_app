@@ -19,10 +19,20 @@ gem "font-awesome-rails"
 gem 'twilio-ruby'
 gem 'private_pub'
 gem 'thin'
+gem 'fancybox2-rails'
+gem 'angularjs-rails'
+gem 'angular-ui-bootstrap-rails'
+gem 'gmaps4rails'
+gem "actionpack-action_caching"
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'tinymce-rails'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'prawn-rails'
+gem 'geocoder'
 gem 'roo'
 gem 'iconv'
 gem 'roo-xls'

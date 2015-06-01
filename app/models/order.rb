@@ -1,5 +1,20 @@
 class Order < ActiveRecord::Base
+    
+    validates :order_name, :presence => true
+    #after_validation :reverse_geocode
+    #before_create :reverse_geocode
     belongs_to :user
+    
+   
+   # reverse_geocoded_by :lat, :long do |obj,results|
+    #geo = results.first
+    #p geo
+    #end
+    
+    
+    
+    
+    
     
     def self.search(search)
         if search

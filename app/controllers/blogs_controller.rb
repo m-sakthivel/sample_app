@@ -15,7 +15,8 @@ class BlogsController < ApplicationController
   end
 
   def show
-    respond_with(@blog)
+    respond_with(@blog, :layout => false)
+    
   end
 
   def new
