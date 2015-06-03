@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -14,6 +14,13 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'paperclip'
 #gem 'prawn'
+group :development do
+ gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 gem 'will_paginate'
 gem "font-awesome-rails"
 gem 'twilio-ruby'
@@ -23,10 +30,11 @@ gem 'fancybox2-rails'
 gem 'angularjs-rails'
 gem 'angular-ui-bootstrap-rails'
 gem 'gmaps4rails'
-gem "actionpack-action_caching"
+#gem "actionpack-action_caching"
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'tinymce-rails'
+gem 'authorizenet'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 gem 'jquery-rails'
@@ -38,7 +46,7 @@ gem 'iconv'
 gem 'roo-xls'
 # gem 'rails4_client_side_validations', '~> 4.2.0'
 #gem 'mailcatcher'
-gem 'grape'
+#gem 'grape'
 gem "twitter-bootstrap-rails"
 #gem 'bootstrap-sass'
 gem 'autoprefixer-rails'

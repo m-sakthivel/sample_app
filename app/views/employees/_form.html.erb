@@ -15,7 +15,6 @@ $(document).ready(function() {
        });
         
     });
-    
   });
 </script>
 <%= bv_form_for(@employee, remote: true)  do |f| %>
@@ -30,7 +29,8 @@ $(document).ready(function() {
       </ul>
     </div>
   <% end %>
- 
+ <% @a = "check"%>
+ <%= pri(@a)%>
   <div class="control-group">
     <%= f.text_field :employee_name, :class =>'input-medium' %>
   </div>
@@ -42,12 +42,12 @@ $(document).ready(function() {
   </div>
     <div class="control-group">
     <%#= f.label :country %>
-    <%= f.collection_select(:country, @countries, :id, :country_name, {:prompt => true})%>
+    <%= f.collection_select(:country, @countries, :id, :country_name, {:prompt => true}, :class => "country")%>
   </div>
     
     <div class="control-group">
     <%#= f.label :country %>
-    <%= f.collection_select(:state, @countries, :id, :country_name, {:prompt => "select state"})%>
+    <%= f.collection_select(:state, @countries, :id, :country_name, {:prompt => "select state"}, :class => 'country')%>
   </div>
   <div class="actions">
     <%= f.submit %>

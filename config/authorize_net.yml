@@ -1,0 +1,8 @@
+default:
+  api_login_id: 3ADms4MLb4W
+  api_transaction_key: 86c38U2tEE6gK86C
+  merchant_hash_value: I
+
+development: 
+test: 
+production: 
