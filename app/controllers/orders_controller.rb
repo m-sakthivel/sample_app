@@ -1,14 +1,16 @@
-require 'actionpack/action_caching'
+#require 'actionpack/action_caching'
 class OrdersController < ApplicationController
+  include HTTParty
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+   #newly inserted via vim editor
   respond_to :html, :json
+  
   #caches_action :index
+  #edit here thoukljkfjaj
   def index
     
       @orders = Order.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
-      p @orders
-      p "----------"
-     #respond_with(@orders)
+      #respond_with(@orders)
   end
 
   def show
@@ -21,6 +23,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+      
     respond_with(@order)
   end
 
@@ -41,10 +44,10 @@ class OrdersController < ApplicationController
     #@order.long = "80.224027"
     @order.user_id = current_user.id
     @order.save
-    #if request.xhr?
-     # render index
-   # expire_action :action=> :index
-    #else
+    # if request.xhr?
+    #   render index
+    # expire_action :action=> :index
+    
     respond_with(@order)
     #end
   end
@@ -73,3 +76,5 @@ class OrdersController < ApplicationController
       params.require(:order).permit(:order_name, :user_id, :order_date)
     end
 end
+
+

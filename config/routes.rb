@@ -27,7 +27,12 @@ Rails.application.routes.draw do
   namespace :api do
   #namespace :api, path: '', constraints: {subdomain: 'api'}, defaults: {format: 'json'} do
   namespace :v1 do
-    resources :orders
+    resources :orders do
+        collection do
+           post 'posts'
+          end
+      end
+     
   end
 end
 
@@ -75,7 +80,7 @@ end
   resources :conversations do
     resources :messages
   end
-  
+  get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
   #mount API::Root => '/'
   #get  "/employees/subscribe_user/:id" => 
   #get  "/employees/user_list" => "employees#user_list"

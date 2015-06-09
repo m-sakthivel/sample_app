@@ -14,6 +14,8 @@
            <!-- <li role="presentation"><%= link_to 'User List', user_list_employees_path %></li>-->
             <li role="presentation"><%= link_to 'Edit Profile',edit_user_registration_path %></li>
             <li role="presentation"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+           <li role="presentation"> <%= link_to 'english', change_locale_path(:en) %></li>
+           <li role="presentation"> <%= link_to 'french', change_locale_path(:fn) %></li>
             <%= image_tag(current_user.avatar.url(:thumb), :class=>'img-circle', height: '32', width: '32') %>
             <% else %>
             <li><%= link_to 'Login', new_user_session_path %></li>

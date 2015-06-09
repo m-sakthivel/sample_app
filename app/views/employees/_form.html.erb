@@ -47,7 +47,8 @@ $(document).ready(function() {
     
     <div class="control-group">
     <%#= f.label :country %>
-    <%= f.collection_select(:state, @countries, :id, :country_name, {:prompt => "select state"}, :class => 'country')%>
+    <%= f.select(:state, {:promopt => "select country first"})%>
+    <%#= f.collection_select(:state, {:prompt => "select state"}, :class => 'country')%>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -35,7 +35,7 @@ class EmployeesController < ApplicationController
     @twilio_client.account.sms.messages.create(
       :from => "+1#{twilio_phone_number}",
       :to => '+919042755963',
-      :body => "This is sakthi locak app"
+      :body => "This is sakthi local app"
     )
     @employee = Employee.new(employee_params)
    
