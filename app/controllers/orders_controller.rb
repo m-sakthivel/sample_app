@@ -58,8 +58,13 @@ class OrdersController < ApplicationController
   end
   
   def import
-  Order.import(params[:file])
-  redirect_to root_url, notice: "Products imported."
+    if(params[:file])
+     Order.import(params[:file])
+     redirect_to root_url, notice: "Products imported."
+    else
+     flash.now[:alert] = 'please upload file'  
+     redirect_to orders_path
+    end
   end
 
   def destroy

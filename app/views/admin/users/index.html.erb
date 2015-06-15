@@ -1,11 +1,7 @@
-<%= form_tag("/index", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
+
 
 <h1>User Details</h1>
-<%= link_to "CSV", admin_users_index_path(format: "csv") %> 
+<%#= link_to "CSV", admin_users_index_path(format: "csv") %> 
 <%= link_to "Excel", admin_users_index_path(format: "xls") %>
 
 <table  class = 'table table-striped'>

@@ -61,10 +61,11 @@ end
   get 'users/delete'
   end
   
-  authenticated :user do
-    root 'users#index'
-  end
+  #authenticated :user do
+   # root 'users#index'
+  #end
 
+  root 'orders#index'
   devise_for :users
   resources :employees do
     member do 

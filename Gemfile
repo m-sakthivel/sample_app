@@ -18,7 +18,7 @@ gem 'httparty'
 group :development do
  gem 'sqlite3'
 end
-
+gem "rspec-rails", :group => [:development, :test]
 group :production do
   gem 'pg'
   gem 'rails_12factor'

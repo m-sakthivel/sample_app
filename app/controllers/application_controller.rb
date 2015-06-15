@@ -25,6 +25,11 @@ def set_locale
   I18n.locale = l
 end
   
+  
+def after_sign_in_path_for(resource)
+  session[:previous_url] || root_path
+end
+  
   def pri(a)
     p a 
   end

@@ -5,17 +5,17 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
   <%= javascript_include_tag  'jquery-1.11.3', 'jquery_ujs','application', 'underscore-min' ,'data-turbolinks-track' => true %>
-  5
+  
   <%= csrf_meta_tags %>
   
  <ul  class="nav nav-tabs bck">
    <% if current_user %>
-            <li role="presentation"><%= link_to 'Blog', new_blog_path %></li>
+           
            <!-- <li role="presentation"><%= link_to 'User List', user_list_employees_path %></li>-->
             <li role="presentation"><%= link_to 'Edit Profile',edit_user_registration_path %></li>
             <li role="presentation"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-           <li role="presentation"> <%= link_to 'english', change_locale_path(:en) %></li>
-           <li role="presentation"> <%= link_to 'french', change_locale_path(:fn) %></li>
+           <!--<li role="presentation"> <%= link_to 'english', change_locale_path(:en) %></li>
+           <li role="presentation"> <%= link_to 'french', change_locale_path(:fn) %></li>-->
             <%= image_tag(current_user.avatar.url(:thumb), :class=>'img-circle', height: '32', width: '32') %>
             <% else %>
             <li><%= link_to 'Login', new_user_session_path %></li>
@@ -28,7 +28,12 @@
   <!--<div id="header"></div>-->
 <div id="main-wrap">
     <div id="sidebar" class = "leftnav box">
-     <%#= render  "layouts/subscribe"%>
+     <% if current_user %>    
+     <%if current_user.is_admin == true%>
+            <li role="presentation"><%= link_to 'admin', admin_users_index_path %></li>
+            <%end%>
+            <li role="presentation"><%= link_to 'Orders', orders_path %></li>
+            <%end%>
 </div>
     <div id="content-wrap" class="cont"><%= yield %></div>
 </div>

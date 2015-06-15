@@ -38,12 +38,12 @@
 
 #sidebar {
     float: left;
-    width: 30%;
+    width: 10%;
 }
 
 #content-wrap {
     float: right;
-    width: 70%;
+    width: 90%;
 }   
  
 
